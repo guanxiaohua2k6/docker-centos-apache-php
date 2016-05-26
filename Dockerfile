@@ -33,13 +33,13 @@ RUN drupal --version
 
 #update httpd.conf
 ADD httpd.conf /etc/httpd/conf/httpd.conf
-
+RUN cat /etc/httpd/conf.d/ssl.conf
 
 #update php.ini
 ADD php.ini /etc/php.ini
 
 #port and entry
-EXPOSE 80
+#EXPOSE 80
 EXPOSE 443 
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
