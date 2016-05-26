@@ -22,7 +22,7 @@ RUN mv composer.phar /usr/bin/composer
 
 
 #drupal
-RUN composer global require drupal/console
+RUN composer global require drupal/console:dev-master
 ENV PATH /root/.composer/vendor/bin:$PATH
 RUN echo $PATH
 RUN drupal --version
