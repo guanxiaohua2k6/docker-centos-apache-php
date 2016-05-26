@@ -10,6 +10,9 @@ RUN yum -y install --enablerepo=remi,remi-php56 php php-opcache php-devel php-mb
 
 RUN php -v
 
+#install ssl
+RUN yum -y install openssl mod_ssl
+
 #install git
 RUN yum -y install git
 RUN git --version
@@ -37,5 +40,6 @@ ADD php.ini /etc/php.ini
 
 #port and entry
 EXPOSE 80
+EXPOSE 443 
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
