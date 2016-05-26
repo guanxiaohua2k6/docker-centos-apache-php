@@ -11,7 +11,7 @@ RUN yum -y install --enablerepo=remi,remi-php56 php php-opcache php-devel php-mb
 RUN php -v
 
 #install git
-RUN yum -y git
+RUN yum -y install git
 RUN git --version
 
 
