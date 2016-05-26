@@ -39,7 +39,7 @@ RUN cat /etc/httpd/conf.d/ssl.conf
 ADD php.ini /etc/php.ini
 
 #port and entry
-#EXPOSE 80
-EXPOSE 443 
+EXPOSE 80
+#EXPOSE 443 
 
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
